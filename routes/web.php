@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Api\EmployeeController;
 use App\Livewire\Pages\Sales\DashboardSales;
 use App\Livewire\Pages\Warehouse\DashboardWarehouse;
+use App\Livewire\Pages\Hr\DashboardHr;
+use App\Livewire\Pages\Service\DashboardService;
 
 
 Route::get('/', function () {

@@ -21,9 +21,9 @@ class DashboardHr extends Component
   public function render()
   {
 
-    return view('livewire.pages.warehouse.dashboard-hr')
+    return view('livewire.pages.hr.dashboard-hr')
       ->layout('components.layouts.app', [
-        'sidebar' => view('livewire.pages.warehouse.components.sidebar-whr'),
+        'sidebar' => view('livewire.pages.hr.components.sidebar-whr'),
       ]);
   }
 }

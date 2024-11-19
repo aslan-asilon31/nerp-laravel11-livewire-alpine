@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Pages\wWlcome;
+namespace App\Livewire\Pages\Welcome;
 
 use Livewire\Component;
 
