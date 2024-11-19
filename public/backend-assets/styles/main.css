@@ -1,0 +1,18 @@
+/* styles/main.css */
+/* @import './components/button.css';
+@import './components/card.css'; */
+
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+.font-family-karla { font-family: karla; }
+.bg-sidebar { background: #800080; }
+.cta-btn { color: #800080; }
+.upgrade-btn { background: #710193; }
+.upgrade-btn:hover { background: #0038fd; }
+.active-nav-link { background: #710193; }
+.nav-item:hover { background: #710193; }
+.account-link:hover { background: #800080; }

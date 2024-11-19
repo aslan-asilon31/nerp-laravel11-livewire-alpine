@@ -1,0 +1,12 @@
+/* styles/components/card.css */
+.card {
+    @apply p-4 border rounded shadow-lg bg-white;
+}
+
+.card-title {
+    @apply text-xl font-bold;
+}
+
+.card-content {
+    @apply text-gray-700;
+}
