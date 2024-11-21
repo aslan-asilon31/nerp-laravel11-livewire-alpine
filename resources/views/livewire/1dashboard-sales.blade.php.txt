@@ -1,0 +1,4 @@
+<div>
+  @section('title', 'Dashboard Sales')
+  <h1>Sales Page</h1>
+</div>

@@ -39,15 +39,7 @@
             <div class="hidden sm:ml-6 sm:block">
               <div class="flex space-x-4">
 
-                <a href="/sales/dashboard" wire:navigate.hover
-                  class="rounded-md px-3 py-2 text-sm font-medium text-purple-300 hover:bg-purple-700 hover:text-white {{ $activeModule === 'sales' ? 'active-page' : '' }}">
-                  Sales
-                </a>
-
-                <a href="/warehouse/dashboard" wire:navigate.hover
-                  class="rounded-md px-3 py-2 text-sm font-medium text-purple-300 hover:bg-purple-700 hover:text-white {{ $activeModule === 'warehouse' ? 'active-page' : '' }}">
-                  Warehouse
-                </a>
+                <x-navigation-menu />
 
               </div>
             </div>
@@ -223,7 +215,7 @@
                   <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
                     href="messages.html">
                     <div class="h-12.5 w-12.5 rounded-full">
-                      <img src="{{ asset('') }}src/images/user/user-01.png" alt="User" />
+                      <img src="{{ asset('tailadmin-htmlcss/src/images/user/user-01.png') }}" alt="User" />
                     </div>
 
                     <div>
@@ -255,7 +247,7 @@
                   <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
                     href="messages.html">
                     <div class="h-12.5 w-12.5 rounded-full">
-                      <img src="{{ asset('') }}src/images/user/user-04.png" alt="User" />
+                      <img src="{{ asset('tailadmin-htmlcss/src/images/user/user-04.png') }}" alt="User" />
                     </div>
 
                     <div>
@@ -379,6 +371,7 @@
             </button>
           </div>
           <!-- Dropdown End -->
+
         </div>
         <!-- User Area -->
       </div>

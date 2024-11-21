@@ -1,0 +1,56 @@
+<?php
+
+namespace App\Livewire\Pages\Sales;
+
+use Livewire\Component;
+use App\Models\Product;
+
+
+class SalesCrud extends Component
+{
+  public $name = '';
+  public $id = '';
+
+  public function mount()
+  {
+    if ($this->id) {
+      $this->edit();
+    }
+  }
+
+  public function store()
+  {
+
+    // Validasi form jika diperlukan
+
+
+    // Simpan data baru atau update jika ada ID
+    // Product::create([
+    //   'name' => $this->name,
+    // ]);
+
+    Product::create(
+      $this->only(['name'])
+    );
+
+    // Redirect ke halaman produk setelah menyimpan
+    session()->flash('message', 'Product successfully saved!');
+    $this->redirect(route('sales.product-sales')); // gunakan route named untuk redirect
+  }
+
+  public function create() {}
+
+  public function edit()
+  {
+    $record = $this->model::findOrFail($this->id);
+    $this->masterForm->fill($record);
+  }
+
+  public function render()
+  {
+    return view('livewire.pages.sales.sales-crud')
+      ->layout('components.layouts.app', [
+        'sidebar' => view('livewire.pages.sales.components.sidebar-sales'),
+      ]);
+  }
+}

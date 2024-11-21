@@ -8,15 +8,13 @@
   <title>
     @yield('title')
   </title>
-  <link rel="icon" href="nerp.png">
+  <link rel="icon" href="{{ asset('nerp.png') }}">
   <link href="{{ asset('tailadmin-htmlcss/style.css') }}" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
-
 
   <style>
     .active-page {
@@ -71,7 +69,6 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
     <!-- ===== Content Area End ===== -->
   </div>
   <!-- ===== Page Wrapper End ===== -->
-  <script defer src="{{ asset('tailadmin-htmlcss/bundle.js') }}"></script>
 </body>
 
 </html>

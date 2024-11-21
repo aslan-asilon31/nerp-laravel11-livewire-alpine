@@ -1,0 +1,12 @@
+@props(['active' => false])
+
+@php
+
+  $classes = $active ?? false ? 'nav-link active' : 'nav-link';
+
+@endphp
+
+<a {{ $attributes->merge(['class' => $classes]) }}
+  class="rounded-md px-3 py-2 text-sm font-medium text-purple-300 hover:bg-purple-700 hover:text-white " wire:navigate>
+  {{ $slot }}
+</a>
