@@ -3,6 +3,7 @@
 namespace App\Livewire\Pages\Sales\SalesProductSales;
 
 use Livewire\Component;
+use App\Models\Company;
 
 class SalesProductSales extends Component
 {
@@ -16,9 +17,14 @@ class SalesProductSales extends Component
 
   public function render()
   {
-    return view('livewire.pages.sales.sales-product-sales')
+    $companies = Company::all();
+    return view('livewire.pages.sales.SalesProductSales.sales-product-sales', [
+      'companies' => $companies,
+    ])
       ->layout('components.layouts.app', [
-        'sidebar' => view('livewire.pages.sales.components.sidebar-sales'),
+        'sidebar' => view('livewire.pages.sales.components.sidebar-sales', [
+          'companies' => $companies,
+        ]),
       ]);
   }
 }

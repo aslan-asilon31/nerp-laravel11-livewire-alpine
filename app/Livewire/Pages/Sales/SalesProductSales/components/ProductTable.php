@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Pages\Sales\Components;
+namespace App\Livewire\Pages\Sales\SalesProductSales\Components;
 
 use App\Models\product;
 use Illuminate\Support\Carbon;
@@ -14,6 +14,11 @@ use PowerComponents\LivewirePowerGrid\PowerGridFields;
 use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\DB;
+use App\Helpers\Table\Traits\WithTable;
+use PowerComponents\LivewirePowerGrid\Footer;
+use PowerComponents\LivewirePowerGrid\Header;
+use PowerComponents\LivewirePowerGrid\Traits\WithExport;
+
 
 final class ProductTable extends PowerGridComponent
 {
@@ -45,25 +50,37 @@ final class ProductTable extends PowerGridComponent
   public function fields(): PowerGridFields
   {
     return PowerGrid::fields()
-      ->add('action', fn($record) => Blade::render('<x-action-section fieldId="' . e($record->id) . '" url="/marketplaces" :isEdit="true" />'))
 
+      ->add('action', fn($record) => '
+      <div class="flex">
+      <a href="/sales/product-sales/' . e($record->id) . '/edit/" :isEdit="true" class="m-4">
+      <img width="24" height="24" src="https://img.icons8.com/nolan/64/edit-database.png" alt="edit-database"/>
+        </a> 
+      <br/>
+      <a href="/sales/product-sales/' . e($record->id) . '/destroy/" :isDestroy="true"  class=" m-4">
+      <img width="24" height="24" src="https://img.icons8.com/nolan/64/delete-forever.png" alt="delete-forever"/>
+      </a>
+      </div>
+      ')
       ->add('id')
-      ->add('name');
+      ->add('name')
+      ->add('created_at_formatted', function ($dish) {
+        return Carbon::parse($dish->created_at)->locale('id')->isoFormat('D MMMM YYYY HH:mm');
+      });
   }
 
   public function columns(): array
   {
     return [
-      Column::action('Action'),
-
-      // Column::make('ID', 'id')
-      //   ->sortable(),
+      Column::make(title: 'Action', field: 'action'),
 
       Column::make('Name', 'name')
         ->sortable(),
 
-
       Column::make('Created By', 'created_by')
+        ->sortable(),
+
+      Column::make('Created At', 'created_at_formatted')
         ->sortable(),
     ];
   }
@@ -81,7 +98,7 @@ final class ProductTable extends PowerGridComponent
     $this->js('alert(' . $rowId . ')');
   }
 
-  public function actions(product $row): array
+  public function action(product $row): array
   {
     return [
 
@@ -98,16 +115,4 @@ final class ProductTable extends PowerGridComponent
         ->dispatch('show', ['rowId' => $row->id])
     ];
   }
-
-  /*
-    public function actionRules($row): array
-    {
-       return [
-            // Hide button edit for ID 1
-            Rule::button('edit')
-                ->when(fn($row) => $row->id === 1)
-                ->hide(),
-        ];
-    }
-    */
 }

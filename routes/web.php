@@ -11,6 +11,7 @@ use App\Livewire\Pages\Sales\SalesBestSeller;
 use App\Livewire\Pages\Sales\SalesCustomer;
 use App\Livewire\Pages\Sales\SalesExtraSales;
 use App\Livewire\Pages\Sales\SalesProductSales\SalesProductSales;
+use App\Livewire\Pages\Sales\SalesProductSales\SalesProductSalesCrud;
 use App\Livewire\Pages\Sales\SalesCrud;
 use App\Livewire\Pages\Sales\SalesReport;
 use App\Livewire\Pages\Sales\SalesSubExtraSales;
@@ -40,7 +41,10 @@ Route::prefix('sales')->name('sales.')->group(function () {
   Route::get('/extra-sales', SalesExtraSales::class)->name('extra-sales');
 
   Route::get('/product-sales', SalesProductSales::class)->name('product-sales');
-  Route::get('/product-sales/create', SalesCrud::class)->name('product-sales-create');
+  Route::get('/product-sales/create', SalesProductSalesCrud::class)->name('product-sales-create');
+  Route::get('/product-sales/{id}/edit', SalesProductSalesCrud::class)->name('product-sales-create');
+  Route::get('/product-sales/{id}/destroy', SalesProductSalesCrud::class, 'destroy')->name('product-sales-create');
+
 
   Route::get('/report', SalesReport::class)->name('report');
   Route::get('/sub-extra-sales', SalesSubExtraSales::class)->name('sub-extra-sales');

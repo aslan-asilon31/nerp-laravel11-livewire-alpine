@@ -2,7 +2,7 @@
 
 return [
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Theme
     |--------------------------------------------------------------------------
@@ -11,26 +11,26 @@ return [
     | Configure here the theme of your choice.
     */
 
-    'theme' => \PowerComponents\LivewirePowerGrid\Themes\Tailwind::class,
-    //'theme' => \PowerComponents\LivewirePowerGrid\Themes\Bootstrap5::class,
+  'theme' => \PowerComponents\LivewirePowerGrid\Themes\Tailwind::class,
+  //'theme' => \PowerComponents\LivewirePowerGrid\Themes\Bootstrap5::class,
 
-    'cache_ttl' => null,
+  'cache_ttl' => null,
 
-    'icon_resources' => [
-        'paths' => [
-            // 'default' => 'resources/views/components/icons',
-            // 'outline' => 'vendor/wireui/wireui/resources/views/components/icons/outline',
-            // 'solid'   => 'vendor/wireui/wireui/resources/views/components/icons/solid',
-        ],
-
-        'allowed' => [
-            // 'pencil',
-        ],
-
-        'attributes' => ['class' => 'w-5 text-red-600'],
+  'icon_resources' => [
+    'paths' => [
+      // 'default' => 'resources/views/components/icons',
+      // 'outline' => 'vendor/wireui/wireui/resources/views/components/icons/outline',
+      // 'solid'   => 'vendor/wireui/wireui/resources/views/components/icons/solid',
     ],
 
-    /*
+    'allowed' => [
+      // 'pencil',
+    ],
+
+    'attributes' => ['class' => 'w-5 text-red-600'],
+  ],
+
+  /*
     |--------------------------------------------------------------------------
     | Plugins
     |--------------------------------------------------------------------------
@@ -39,49 +39,49 @@ return [
     |
     */
 
-    'plugins' => [
-        /*
+  'plugins' => [
+    /*
          * https://flatpickr.js.org
          */
-        'flatpickr' => [
-            'locales' => [
-                'pt_BR' => [
-                    'locale'     => 'pt',
-                    'dateFormat' => 'd/m/Y H:i',
-                    'enableTime' => true,
-                    'time_24hr'  => true,
-                ],
-            ],
+    'flatpickr' => [
+      'locales' => [
+        'pt_BR' => [
+          'locale'     => 'pt',
+          'dateFormat' => 'd/m/Y H:i',
+          'enableTime' => true,
+          'time_24hr'  => true,
         ],
+      ],
+    ],
 
-        'select' => [
-            'default' => 'tom',
+    'select' => [
+      'default' => 'tom',
 
-            /*
+      /*
              * TomSelect Options
              * https://tom-select.js.org
              */
-            'tom' => [
-                'plugins' => [
-                    'clear_button' => [
-                        'title' => 'Remove all selected options',
-                    ],
-                ],
-            ],
+      'tom' => [
+        'plugins' => [
+          'clear_button' => [
+            'title' => 'Remove all selected options',
+          ],
+        ],
+      ],
 
-            /*
+      /*
              * Slim Select options
              * https://slimselectjs.com/
              */
-            'slim' => [
-                'settings' => [
-                    'alwaysOpen' => false,
-                ],
-            ],
+      'slim' => [
+        'settings' => [
+          'alwaysOpen' => false,
         ],
+      ],
     ],
+  ],
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Filters
     |--------------------------------------------------------------------------
@@ -93,9 +93,10 @@ return [
     |
     */
 
-    'filter' => 'inline',
+  'filter' => 'inline',
+  // 'filter' => 'outside',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Persisting
     |--------------------------------------------------------------------------
@@ -107,9 +108,9 @@ return [
     |
     */
 
-    'persist_driver' => 'cookies',
+  'persist_driver' => 'cookies',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Exportable class
     |--------------------------------------------------------------------------
@@ -117,15 +118,15 @@ return [
     |
     */
 
-    'exportable' => [
-        'default'      => 'openspout_v4',
-        'openspout_v4' => [
-            'xlsx' => \PowerComponents\LivewirePowerGrid\Components\Exports\OpenSpout\v4\ExportToXLS::class,
-            'csv'  => \PowerComponents\LivewirePowerGrid\Components\Exports\OpenSpout\v4\ExportToCsv::class,
-        ],
+  'exportable' => [
+    'default'      => 'openspout_v4',
+    'openspout_v4' => [
+      'xlsx' => \PowerComponents\LivewirePowerGrid\Components\Exports\OpenSpout\v4\ExportToXLS::class,
+      'csv'  => \PowerComponents\LivewirePowerGrid\Components\Exports\OpenSpout\v4\ExportToCsv::class,
     ],
+  ],
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Auto-Discover Models
     |--------------------------------------------------------------------------
@@ -136,7 +137,7 @@ return [
     |
     */
 
-    'auto_discover_models_paths' => [
-        app_path('Models'),
-    ],
+  'auto_discover_models_paths' => [
+    app_path('Models'),
+  ],
 ];
