@@ -14,21 +14,24 @@
 
   <script src="https://code.highcharts.com/modules/data.js"></script>
 
-  @section('title', 'Dashboard Warehouse')
+  @section('title', 'Dashboard Marketing')
   <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
 
-    <div
-      class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
-      
-        <figure class="">
-          <img src="{{ asset('banner-nerp/banner-service.png') }}" alt="" srcset="">
-        </figure>
-    </div>
 
+  <div
+          class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
+          
+            <figure class="">
+              <img src="{{ asset('banner-nerp/banner-marketing.png') }}" alt="" srcset="">
+            </figure>
+        </div>
+        
     <!-- ====== Chart One Start -->
     <div
       class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
       <div class="flex flex-wrap items-start justify-between gap-3 sm:flex-nowrap">
+
+
 
         <div class="flex w-full max-w-55 justify-end">
           <div class="inline-flex items-center rounded-md bg-whiter p-1.5 dark:bg-meta-4">
@@ -54,6 +57,7 @@
       </div>
     </div>
     <!-- ====== Chart One End -->
+
 
 
     <div

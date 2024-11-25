@@ -16,6 +16,9 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+
+  <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet" />
+  
   <style>
     .active-page {
       color: #ffffff;

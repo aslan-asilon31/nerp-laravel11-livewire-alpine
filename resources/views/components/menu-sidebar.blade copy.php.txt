@@ -12,13 +12,13 @@
     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
     <option selected>Select Product</option>
 
-    @foreach ($companies as $c)
+    <!-- @foreach ($companies as $c)
       <option value="{{ $c->id }}">{{ $c->name }}</option>
     @endforeach
 
     @if ($companies->isEmpty())
       <option value="" disabled>No companies available</option>
-    @endif
+    @endif -->
   </select>
 </form>
 

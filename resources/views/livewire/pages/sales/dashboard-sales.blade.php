@@ -1,7 +1,20 @@
 <div>
   @section('title', 'Dashboard Sales')
   <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+
+    
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
+
+
+    
+            <div
+              class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
+              
+                <figure class="">
+                  <img src="{{ asset('banner-nerp/banner-sales.png') }}" alt="" srcset="">
+                </figure>
+            </div>
+        
       <!-- Card Item Start -->
       <div
         class="rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark">

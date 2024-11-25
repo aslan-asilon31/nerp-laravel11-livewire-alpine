@@ -5,8 +5,8 @@
     <!-- SIDEBAR HEADER -->
 
 
-    <x-dropdown-workspace :companies="$companies" />
-
+    <livewire:components.menu-sidebar :companies="$companies" />
+    
 
     <!-- SIDEBAR HEADER -->
 

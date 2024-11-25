@@ -64,6 +64,19 @@ final class ProductTable extends PowerGridComponent
       ')
       ->add('id')
       ->add('name')
+
+      ->add('status', function($record) {
+        return $record->status ? $record->status->name : 'No Status'; // Menampilkan nama status terkait
+      })
+            
+      ->add('price', function($record) {
+        return $record->price ? $record->price->price_selling_after : 'No price'; 
+      })
+
+      ->add('price_before', function($record) {
+        return $record->price ? $record->price->price_selling : 'No price'; 
+      })
+
       ->add('created_at_formatted', function ($dish) {
         return Carbon::parse($dish->created_at)->locale('id')->isoFormat('D MMMM YYYY HH:mm');
       });
@@ -80,8 +93,15 @@ final class ProductTable extends PowerGridComponent
       Column::make('Created By', 'created_by')
         ->sortable(),
 
+      Column::make('Status', 'status')->sortable(),
+      Column::make('Price', 'price')->sortable(),
+      Column::make('Price Before', 'price_before')->sortable(),
+
       Column::make('Created At', 'created_at_formatted')
         ->sortable(),
+
+
+
     ];
   }
 

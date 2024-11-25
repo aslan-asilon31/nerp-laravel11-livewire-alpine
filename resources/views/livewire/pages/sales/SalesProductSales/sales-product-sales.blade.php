@@ -14,19 +14,23 @@
     </div>
 
     <br>
+    
+    <div class="bg-white">
 
-    <!-- Flash message -->
-    @if (session()->has('message'))
-      <div class="mt-4 p-2 bg-green-500 text-white rounded">
-        {{ session('message') }}
-      </div>
-    @endif
+      <!-- Flash message -->
+      @if (session()->has('message'))
+        <div class="mt-4 p-2 bg-green-500 text-white rounded">
+          {{ session('message') }}
+        </div>
+      @endif
 
-    <br>
+      <br>
 
-    <a href="/sales/product-sales/create" class="bg-purple-500 text-white p-3 px-6">Create</a>
+      <a href="/sales/product-sales/create" class="bg-purple-500 text-white p-3 px-6">Create</a>
 
-    <livewire:pages.sales.sales-product-sales.components.product-table />
+      <livewire:pages.sales.sales-product-sales.components.product-table  />
+
+    </div>
 
   </div>
 

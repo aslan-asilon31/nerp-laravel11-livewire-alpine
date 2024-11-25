@@ -23,7 +23,7 @@ class DashboardHr extends Component
 
     return view('livewire.pages.hr.dashboard-hr')
       ->layout('components.layouts.app', [
-        'sidebar' => view('livewire.pages.hr.components.sidebar-whr'),
+        'sidebar' => view('livewire.pages.hr.components.sidebar-hr'),
       ]);
   }
 }

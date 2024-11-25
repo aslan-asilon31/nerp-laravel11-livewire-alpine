@@ -4,9 +4,8 @@ namespace App\Livewire\Pages\Sales\SalesProductSales;
 
 use App\Models\Product;
 use App\Models\Company;
-
+use Livewire\WithFileUploads; 
 use App\Livewire\Pages\Sales\SalesProductSales\Forms\ProductForm;
-
 use Livewire\Component;
 
 class SalesProductSalesCrud extends Component
@@ -18,6 +17,8 @@ class SalesProductSalesCrud extends Component
   // #[\Livewire\Attributes\Locked]
   public string $id = '';
   public string $name = '';
+  public $filepond = '';
+
 
   private  string $model = Product::class;
 
@@ -48,6 +49,7 @@ class SalesProductSalesCrud extends Component
   {
     $validatedForm = $this->ProductForm->validate();
 
+    dd($this->filepond);
     $products = Product::create([
       'name' => $validatedForm['name'],
       'created_by' => auth()->user() ? auth()->user()->name : 'anonymous',

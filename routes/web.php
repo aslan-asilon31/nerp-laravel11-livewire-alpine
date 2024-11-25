@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Api\EmployeeController;
 use App\Livewire\Pages\Sales\DashboardSales;
+use App\Livewire\Pages\Marketing\DashboardMarketing;
+use App\Livewire\Pages\Welcome\DashboardWelcome;
+use App\Livewire\Pages\Manufacture\DashboardManufacture;
 use App\Livewire\Pages\Warehouse\DashboardWarehouse;
 use App\Livewire\Pages\Service\DashboardService;
 use App\Livewire\Pages\Hr\DashboardHr;
@@ -59,18 +62,22 @@ Route::prefix('hr')->name('hr.')->group(function () {
   Route::get('/dashboard', DashboardHR::class)->name('dashboard');
 });
 
-// Route::prefix('marketing')->name('marketing.')->group(function () {
-//   Route::get('/dashboard', DashboardMarketing::class)->name('dashboard');
-// });
+Route::prefix('marketing')->name('marketing.')->group(function () {
+  Route::get('/dashboard', DashboardMarketing::class)->name('dashboard');
+});
 
-// Route::prefix('welcome')->name('welcome.')->group(function () {
-//   Route::get('/dashboard', DashboardWelcome::class)->name('dashboard');
-// });
+Route::prefix('welcome')->name('welcome.')->group(function () {
+  Route::get('/dashboard', DashboardWelcome::class)->name('dashboard');
+});
 
 Route::prefix('service')->name('service.')->group(function () {
   Route::get('/dashboard', DashboardService::class)->name('dashboard');
 });
 
+
+Route::prefix('manufacture')->name('manufacture.')->group(function () {
+  Route::get('/dashboard', DashboardManufacture::class)->name('dashboard');
+});
 
 
 Route::get('/user-cek', function () {

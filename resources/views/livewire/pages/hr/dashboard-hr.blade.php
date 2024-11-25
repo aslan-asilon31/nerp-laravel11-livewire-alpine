@@ -14,8 +14,10 @@
 
   <script src="https://code.highcharts.com/modules/data.js"></script>
 
-  @section('title', 'Dashboard Warehouse')
+  @section('title', 'Dashboard HR')
   <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+
+
 
 
     <!-- ====== Chart One Start -->
