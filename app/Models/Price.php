@@ -9,9 +9,9 @@ class Price extends Model
 {
   use HasFactory;
 
-  protected $table = 'res_prices'; 
-  protected $primaryKey = 'id'; 
-  protected $keyType = 'int'; 
+  protected $table = 'res_prices';
+  protected $primaryKey = 'id';
+  protected $keyType = 'int';
   protected $fillable = [
     'name',
   ];
@@ -21,5 +21,4 @@ class Price extends Model
   {
     return $this->belongsTo(Price::class, 'price_id', 'id');
   }
-
 }

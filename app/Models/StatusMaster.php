@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Status extends Model
+class StatusMaster extends Model
 {
   use HasFactory;
 
-  protected $table = 'res_status'; 
-  protected $primaryKey = 'id'; 
-  protected $keyType = 'int'; 
+  protected $table = 'res_status';
+  protected $primaryKey = 'id';
+  protected $keyType = 'int';
   protected $fillable = [
     'name',
     'parent_id',
@@ -25,7 +25,6 @@ class Status extends Model
 
   public function products()
   {
-      return $this->hasMany(Product::class, 'status_id', 'id');
+    return $this->hasMany(Product::class, 'status_id', 'id');
   }
-
 }
