@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>
-    @yield('title')
+    {{ $title }}
   </title>
   <link rel="icon" href="{{ asset('nerp.png') }}">
   <link href="{{ asset('tailadmin-htmlcss/style.css') }}" rel="stylesheet">
@@ -18,7 +18,7 @@
 
 
   <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet" />
-  
+
   <style>
     .active-page {
       color: #ffffff;
@@ -32,7 +32,10 @@
     }
   </style>
 
+  @wireUiScripts
+  @livewireStyles
 
+  <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 
 <body x-data="{ page: 'ecommerce', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }" x-init="darkMode = JSON.parse(localStorage.getItem('darkMode'));
@@ -72,6 +75,9 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
     <!-- ===== Content Area End ===== -->
   </div>
   <!-- ===== Page Wrapper End ===== -->
+
+
+  @livewireScripts
 </body>
 
 </html>

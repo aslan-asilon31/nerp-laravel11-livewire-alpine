@@ -14,14 +14,13 @@ Route::get('/employees', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-// Route::prefix('api')->group(function () {
-//   Route::get('/employees', [EmployeeController::class, 'index'])->middleware('auth:sanctum');
-//   Route::get('/status', [EmployeeController::class, 'index'])->middleware('auth:sanctum');
-//   //     Route::get('/employee', [\App\Livewire\Dashboard\Employees::class, 'getEmployeesApi'])->middleware('guest');
-// });
 
 
+Route::get('/status', [StatusController::class, 'index']);
 
-Route::prefix('v1')->group(function () {
-  Route::get('/status', [StatusController::class, 'index']);
+
+Route::group(['middleware' => 'auth'], function () {
+  Route::prefix('v1')->group(function () {
+    Route::get('/tes', [EmployeeController::class, 'tes']);
+  });
 });

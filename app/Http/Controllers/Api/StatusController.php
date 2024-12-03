@@ -14,6 +14,7 @@ class StatusController extends Controller
 
   public function index()
   {
+    dd('cekkk');
     $statuses = StatusMaster::all()->toArray();
     return response()->json($statuses);
   }

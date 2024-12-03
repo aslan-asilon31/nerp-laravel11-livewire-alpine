@@ -15,6 +15,16 @@ use App\Livewire\Pages\Sales\SalesCustomer;
 use App\Livewire\Pages\Sales\SalesExtraSales;
 use App\Livewire\Pages\Sales\SalesProductSales\SalesProductSales;
 use App\Livewire\Pages\Sales\SalesProductSales\SalesProductSalesCrud;
+use App\Livewire\Pages\Sales\Product\Warehouse\WarehouseIndex;
+use App\Livewire\Pages\Sales\Product\Region\RegionIndex;
+use App\Livewire\Pages\Sales\Product\Price\PriceIndex;
+use App\Livewire\Pages\Sales\Product\Image\ImageIndex;
+use App\Livewire\Pages\Sales\Product\Department\DepartmentIndex;
+use App\Livewire\Pages\Sales\Product\Company\CompanyIndex;
+use App\Livewire\Pages\Sales\Product\Bank\BankIndex;
+use App\Livewire\Pages\Master\Brand\BrandIndex;
+use App\Livewire\Pages\Sales\Product\Category\CategoryIndex;
+
 use App\Livewire\Pages\Sales\SalesCrud;
 use App\Livewire\Pages\Sales\SalesReport;
 use App\Livewire\Pages\Sales\SalesSubExtraSales;
@@ -43,14 +53,15 @@ Route::prefix('sales')->name('sales.')->group(function () {
   Route::get('/customer', SalesCustomer::class)->name('customer');
   Route::get('/extra-sales', SalesExtraSales::class)->name('extra-sales');
 
-  Route::get('/product-sales', SalesProductSales::class)->name('product-sales');
-  Route::get('/product-sales/create', SalesProductSalesCrud::class)->name('product-sales-create');
-  Route::get('/product-sales/{id}/edit', SalesProductSalesCrud::class)->name('product-sales-create');
-  Route::get('/product-sales/{id}/destroy', SalesProductSalesCrud::class, 'destroy')->name('product-sales-create');
+  Route::get('/category', CategoryIndex::class)->name('category');
+
+  Route::get('/product', ProductIndex::class)->name('product');
+  Route::get('/products/create', ProductCrud::class)->name('product-create');
+  Route::get('/product/{id}/edit', ProductCrud::class)->name('product-create');
+  Route::get('/product/{id}/destroy', ProductCrud::class, 'destroy')->name('product-create');
 
   Route::get('/report', SalesReport::class)->name('report');
   Route::get('/sub-extra-sales', SalesSubExtraSales::class)->name('sub-extra-sales');
-  Route::get('/category', SalesSubExtraSales::class)->name('category');
 });
 
 Route::prefix('warehouse')->name('warehouse.')->group(function () {

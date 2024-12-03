@@ -7,25 +7,25 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Category extends Model
 {
-  use HasFactory, SoftDeletes;
+  use HasFactory;
 
-  protected $table = 'res_categories'; 
-  protected $primaryKey = 'id'; 
-  protected $keyType = 'int'; 
+  protected $table = 'res_categories';
+  protected $primaryKey = 'id';
+  protected $keyType = 'int';
   protected $fillable = [
-      'status_id',
-      'image',
-      'name',
-      'workspace_id',
-      'desc',
-      'created_by',
-      'updated_by',
-      'parent_id',
-      'created_at',
-      'updated_at',
+    'status_id',
+    'image',
+    'name',
+    'workspace_id',
+    'desc',
+    'created_by',
+    'updated_by',
+    'parent_id',
+    'created_at',
+    'updated_at',
   ];
 
   protected $casts = [
-      'desc' => 'array', 
+    'desc' => 'array',
   ];
 }

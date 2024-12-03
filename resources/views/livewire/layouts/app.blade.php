@@ -8,6 +8,17 @@
   <title>
     {{ $title ?? 'No Title' }} | {{ env('APP_NAME') }}
   </title>
+
+  <!-- Alpine.js -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2" defer></script>
+
+  <!-- WireUI Styles -->
+  <link href="https://cdn.jsdelivr.net/npm/wireui@1.0.0/dist/css/wireui.min.css" rel="stylesheet">
+
+  <!-- WireUI Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/wireui@1.0.0/dist/js/wireui.min.js"></script>
+
+
   <!--
     - Choices Js for replace select2 : https://github.com/Choices-js/Choices
   -->
@@ -523,8 +534,7 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
             <!-- Menu Item Sales Report -->
             <li>
               <a class="text-purple-300 hover:bg-purple-700 group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                href="{{ route('sales.report') }}"
-                @click="selected = (selected === 'Sales Report' ? '':'Sales Report')"
+                href="" @click="selected = (selected === 'Sales Report' ? '':'Sales Report')"
                 :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Sales Report') && (page === 'sales-report') }"
                 wire:navigate>
                 <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18"
@@ -577,8 +587,7 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
             <!-- Menu Item Category Sales -->
             <li>
               <a class="text-purple-300 hover:bg-purple-700 group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                href="{{ route('sales.category') }}"
-                @click="selected = (selected === 'Category Sales' ? '':'Category Sales')"
+                href="" @click="selected = (selected === 'Category Sales' ? '':'Category Sales')"
                 :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Category Sales') && (page === 'category-sales') }">
                 <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18"
                   xmlns="http://www.w3.org/2000/svg">
